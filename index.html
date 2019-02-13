@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta charset="UTF-8">
+      <title>newvalform</title>
+      <script id="sap-ui-bootstrap"
+         src="../../resources/sap-ui-core.js"
+         data-sap-ui-async="true"
+         data-sap-ui-libs="sap.m,sap.ui.ux3"
+         data-sap-ui-theme="sap_belize"
+         data-sap-ui-compatVersion="edge"
+         data-sap-ui-resourceroots='{"com.newvalform.newvalform": "./"}'></script>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <script>
+         sap.ui.getCore().attachInit(function() {
+         var oShell = new sap.ui.ux3.Shell({
+         appTitle:"Shell Content",
+         showLogoutButton: true,
+         showInspectorTool: true,
+         showTools: true,
+         showPane: true,
+         worksetItems:[
+         	new sap.ui.ux3.NavigationItem({
+         	text: "Home",
+         	key: "Home",
+         	press:function(oEvt){
+         		sap.m.MessageToast.show("You pressed Home");
+         	}
+         	}),
+         		new sap.ui.ux3.NavigationItem({
+         	text: "Menu",
+         	key: "M_1",
+         	press:function(oEvt){
+         		sap.m.MessageToast.show("You pressed Home");
+         	}
+         	})
+         	],
+         	content:[
+         		new sap.m.Button({
+         			text: "Simple Button"
+         		})
+         		],
+         		worksetItemSelected:function(oEvt){
+         			sap.m.MessageToast.show(oEvt.getParameter("id"));
+         		},
+         		paneBarItems:[
+         			new sap.ui.core.Item({
+         				text: "Demo 1"
+         			}),
+         			new sap.ui.core.Item({
+         				text: "Demo 2"
+         			})
+         
+         			]
+         	/*	app: new sap.ui.core.ComponentContainer({
+         			height : "100%",
+         			
+         			name : "com.newvalform.newvalform"
+         		})*/
+         	}).placeAt("content");
+         });
+      </script>
+   </head>
+   <body class="sapUiBody" id="content">
+   </body>
+</html>
